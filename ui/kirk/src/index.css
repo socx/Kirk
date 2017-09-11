@@ -3,3 +3,22 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+
+/* START  HEADER & LOGO */
+.page-header.navbar{
+  height: 75px;
+}
+.page-header-inner{
+  padding-top: 10px
+}
+
+.page-logo img {
+  height: 50;
+  width: 130px
+}
+
+.page-header.navbar .page-logo .logo-default {
+  margin : 0;
+}
+/* END  HEADER & LOGO */
