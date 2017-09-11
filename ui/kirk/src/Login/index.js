@@ -75,7 +75,7 @@ const mapStateToProps  = state => ({
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-    loginClicked: () => push('/')
+    loginClicked: () => push('/home')
 }, dispatch)
 
 
