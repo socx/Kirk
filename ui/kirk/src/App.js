@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom';
 import './App.css';
 
 import Login from './Login';
-import Home from './home';
+import Home from './Home';
 
 
 const App = () => (
