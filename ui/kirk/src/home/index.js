@@ -11,7 +11,7 @@ const Home  = (props) => (
     <div>
         <h1>home</h1>
         <h3>best : { props.name} </h3>
-        <div className="home-div">
+        <div className='home-div'>
         {
            props.children.map(child => {
                return (

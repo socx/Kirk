@@ -2162,3 +2162,30 @@ To resolve this:
 ## Something Missing?
 
 If you have ideas for more “How To” recipes that should be on this page, [let us know](https://github.com/facebookincubator/create-react-app/issues) or [contribute some!](https://github.com/facebookincubator/create-react-app/edit/master/packages/react-scripts/template/README.md)
+
+
+## TODO
+Involve Husky for precommit. already installed the necesary packages:-
+
+**prettier**;  enforce a coding style for your project, is the formatter we will run before commits.
+
+__lint-stager__; allows us to run scripts on staged files in git.
+
+__husky__;  To format our code whenever we make a commit in git. makes it easy to use githooks as if they are npm scripts.
+
+```json
+
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": [
+    "prettier --single-quote --write",
+    "git add"
+    ]
+  },
+  "scripts": {
+    "precommit": "lint-staged",
+    "start": "set PORT=3310 && react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+```
