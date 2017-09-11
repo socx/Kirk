@@ -1,10 +1,13 @@
 import React from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { push } from 'react-router-redux';
 
 import './login.min.css'
 import logo from '../assets/img/logo.png';
 
 
-const Login = () => (
+const Login = (props) => (
     <div className='login'>
         <div className="logo">
             <a>
@@ -27,7 +30,7 @@ const Login = () => (
                     <input className='form-control form-control-solid placeholder-no-fix' type='password' placeholder='Password' name='password' /> 
                 </div>
                 <div className="form-actions">
-                    <button type="submit" className="btn green uppercase">Login</button>
+                    <button type="button" className="btn green uppercase" onClick={() => props.loginClicked()}>Login</button>
                     <label className="rememberme check mt-checkbox mt-checkbox-outline">
                         <input type="checkbox" name="remember" value="1" />Remember
                         <span></span>
@@ -64,4 +67,16 @@ const Login = () => (
 
 )
 
-export default Login;
+
+const mapStateToProps  = state => ({
+    name : state.home.name,
+    children : state.home.children,
+    isFetching : state.home.isFetching
+})
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+    loginClicked: () => push('/')
+}, dispatch)
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
