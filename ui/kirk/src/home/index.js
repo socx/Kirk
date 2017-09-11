@@ -4,28 +4,23 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 
 import { getData } from './store/actions'
+import AppHeader from '../AppHeader';
 import './index.css'
 
-
+const style = {
+    background : 'black'
+}
 const Home  = (props) => (
-    <div>
-        <h1>home</h1>
-        <h3>best : { props.name} </h3>
-        <div className='home-div'>
-        {
-           props.children.map(child => {
-               return (
-                   <div key={child.id} >
-                    <p><label>ID: </label> <span>{child.id}</span></p>
-                    <p><label>Name: </label> <span>{child.name}</span></p>
-                    <hr/>
-                   </div>
-               )
-           }) 
-            
-        }
+
+    <div className='page-wrapper'>
+        <AppHeader/>
+        <div className='clearfix'> </div>
+        <div className='page-container'> 
+
+         <span style={style}>Home page</span>
         </div>
-        <button onClick={props.getData} disabled={props.isFetching}>Get Data</button>
+        <div className='page-footer'> 
+        </div>
     </div>
 )
 
