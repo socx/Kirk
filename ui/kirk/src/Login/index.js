@@ -74,6 +74,8 @@ const mapStateToProps  = state => ({
     isFetching : state.home.isFetching
 })
 
+//Delete this
+
 const mapDispatchToProps = dispatch => bindActionCreators({
     loginClicked: () => push('/home')
 }, dispatch)
