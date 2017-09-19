@@ -3,23 +3,16 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 
 import { getData } from './store/actions'
-import AppHeader from '../AppHeader';
 import './index.css'
 
 const style = {
-    background : 'black'
+    background : 'black',
+    fontSize : 73
 }
+
 const Home  = (props) => (
-
-    <div className='page-wrapper'>
-        <AppHeader/>
-        <div className='clearfix'> </div>
-        <div className='page-container'> 
-
-         <span style={style}>Home page</span>
-        </div>
-        <div className='page-footer'> 
-        </div>
+    <div>
+        <span style={style}>Home page</span>
     </div>
 )
 

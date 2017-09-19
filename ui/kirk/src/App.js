@@ -1,16 +1,6 @@
-import React from 'react';
-import { Route } from 'react-router-dom';
-
 import './App.css';
+import { default as App } from './Layouts/Layout3';
 
-import Login from './Login';
-import Home from './Home';
+import './assets/global/css/components.css'
 
-
-const App = () => (
-  <main>
-    <Route exact path='/home' component={Home} />
-    <Route exact path='/' component={Login} />
-  </main>
-)
 export default App;

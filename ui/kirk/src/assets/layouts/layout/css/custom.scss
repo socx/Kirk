@@ -1,0 +1,26 @@
+/* here you can put your own css to customize and override the theme */
+
+
+/* START  HEADER & LOGO */
+  .page-header.navbar{
+    height: 75px;
+  }
+  .page-header-inner{
+    padding-top: 10px
+  }
+  
+  .login .logo img,
+  .page-logo img {
+    height: 50;
+    width: 130px
+  }
+  
+  .page-header.navbar .page-logo .logo-default {
+    margin : 0;
+  }
+
+  .page-header.navbar {
+    background-color: #3d3d3d;
+}
+
+  /* END  HEADER & LOGO */

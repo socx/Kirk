@@ -1,7 +1,7 @@
 import React from 'react';
-import logo from '../assets/img/logo.png';
+import logo from '../../assets/img/logo.png';
 
-const AppHeader  = (props) => (
+const Header1  = (props) => (
     <div className='page-header navbar navbar-fixed-top'>
         <div className='page-header-inner'>
             
@@ -12,8 +12,7 @@ const AppHeader  = (props) => (
             <div className='menu-toggler sidebar-toggler'>
                 <span></span>
             </div>
-        </div>
-            
+        </div>            
             <a className='menu-toggler responsive-toggler' data-toggle='collapse' data-target='.navbar-collapse'>
                 <span></span>
             </a>
@@ -24,4 +23,4 @@ const AppHeader  = (props) => (
 )
 
 
-export default AppHeader
+export default Header1
