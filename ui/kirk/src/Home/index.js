@@ -13,6 +13,7 @@ const style = {
 const Home  = (props) => (
     <div>
         <span style={style}>Home page</span>
+        <button onClick={()=>props.getData()}>Get Forces Data</button>
     </div>
 )
 

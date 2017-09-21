@@ -3,11 +3,9 @@ import * as constants from './constants'
 export const getData = ()  => {
     return dispatch => {        
         dispatch({ type : constants.GET_DATA })
-        const url ='https://data.police.uk/api/forces';
+        const url = `${process.env.REACT_APP_API_ROOT}/forces`;
         fetch(url)
-        .then((res) => {
-            return res.json();
-        })
+        .then((res) =>  res.json() )
         .then((json) => {
             const index = Math.floor(Math.random() * 43 ) + 1
             dispatch({
@@ -16,7 +14,8 @@ export const getData = ()  => {
             })
         })
         .catch(err => {
-            console.log(err)
+            console.log(err);
+            dispatch({ type : constants.GET_DATA_FAILED })
         })
     }
 }
