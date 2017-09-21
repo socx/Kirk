@@ -2,7 +2,7 @@ import React from 'react';
 import logo from '../../assets/img/logo-default.png';
 
 const Header3  = (props) => (
-    <div className='page-header'>
+    <div className={`page-header ${props.hidden ? 'hidden' : ''}`}>
         <div className='page-header-top'>
             <div className='container'>
                 <div className='page-logo'>
@@ -13,13 +13,13 @@ const Header3  = (props) => (
                 <a href='page_user_profile_1.html' className='menu-toggler'> </a>
                 <div className='top-menu'>
                     <ul className='nav navbar-nav pull-right'>
-                        <li className='dropdown dropdown-user dropdown-dark'>
-                            <a href='page_user_profile_1.html' className='dropdown-toggle' data-toggle='dropdown' data-hover='dropdown' data-close-others='true'>
+                        <li className='dropdown dropdown-user dropdown-dark menu-dropdown classic-menu-dropdown' aria-haspopup='true'>
+                            <a className='dropdown-toggle' data-toggle='dropdown' data-hover='dropdown' data-close-others='true'>
                                 <i className='icon-user'></i>
-                                <span className='username username-hide-mobile'>Nick</span>
+                                <span className='username username-hide-mobile'>User</span>
                             </a>
                             <ul className='dropdown-menu dropdown-menu-default'>
-                                <li>
+                                <li aria-haspopup='true'>
                                     <a href='page_user_profile_1.html'>
                                         <i className='icon-user'></i> My Profile </a>
                                 </li>
@@ -50,10 +50,6 @@ const Header3  = (props) => (
                                 </li>
                             </ul>
                         </li>
-                        <li className='dropdown dropdown-extended quick-sidebar-toggler'>
-                            <span className='sr-only'>Toggle Quick Sidebar</span>
-                            <i className='icon-logout'></i>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -64,27 +60,32 @@ const Header3  = (props) => (
                 <div className='hor-menu  '>
                     <ul className='nav navbar-nav'>
                         <li aria-haspopup='true' className='menu-dropdown classic-menu-dropdown '>
-                            <a href='index.html'> Dashboard
+                            <a> Dashboard
                                 <span className='arrow'></span>
                             </a>
                             <ul className='dropdown-menu pull-left'>
                                 <li aria-haspopup='true' className=' '>
-                                    <a href='index.html' className='nav-link  '>
+                                    <a className='nav-link  '>
                                         <i className='icon-bar-chart'></i> Default Dashboard
                                         <span className='badge badge-success'>1</span>
                                     </a>
                                 </li>
-                                <li aria-haspopup='true' className=' '>
-                                    <a href='dashboard_2.html' className='nav-link  '>
-                                        <i className='icon-bulb'></i> Dashboard 2 </a>
-                                </li>
-                                <li aria-haspopup='true' className=' '>
-                                    <a href='dashboard_3.html' className='nav-link  '>
-                                        <i className='icon-graph'></i> Dashboard 3
-                                        <span className='badge badge-danger'>3</span>
-                                    </a>
-                                </li>
                             </ul>
+                        </li>
+                        <li aria-haspopup='true' className='menu-dropdown classic-menu-dropdown '>
+                            <a> Contacts
+                                <span className='arrow'></span>
+                            </a>
+                        </li>
+                        <li aria-haspopup='true' className='menu-dropdown classic-menu-dropdown '>
+                            <a> Finance
+                                <span className='arrow'></span>
+                            </a>
+                        </li>
+                        <li aria-haspopup='true' className='menu-dropdown classic-menu-dropdown '>
+                            <a> Misc
+                                <span className='arrow'></span>
+                            </a>
                         </li>
                     </ul>
                 </div>

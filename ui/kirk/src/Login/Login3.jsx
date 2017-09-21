@@ -15,14 +15,8 @@ const Login3 = (props) => (
             </a>
         </div>
         
-
-
-
-
-
-
         <div className='content'>
-            <form className='login-form' action='index.html'>
+            <form className='login-form'>
                 <h3 className='form-title'>Login to your account</h3>
                 <div className='alert alert-danger display-hide'>
                     <button className='close' data-close='alert'></button>
@@ -45,7 +39,7 @@ const Login3 = (props) => (
                         <input type='checkbox' name='remember' value='1' /> Remember me
                         <span></span>
                     </label>
-                    <button type='submit' className='btn green pull-right'> Login </button>
+                    <button type='button' className='btn green pull-right' onClick={() => props.loginClicked()}> Login </button>
                 </div>
                 <div className='login-options hidden'>
                     <h4>Or login with</h4>
@@ -76,16 +70,6 @@ const Login3 = (props) => (
                 </div>
             </form>
         </div>
-
-
-
-
-
-
-
-
-
-
 
     </div>
 

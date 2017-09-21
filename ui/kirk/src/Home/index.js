@@ -6,8 +6,8 @@ import { getData } from './store/actions'
 import './index.css'
 
 const style = {
-    background : 'black',
-    fontSize : 73
+    background : '#fff',
+    fontSize : 48
 }
 
 const Home  = (props) => (
