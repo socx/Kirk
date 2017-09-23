@@ -1,3 +1,4 @@
 export const show = (state) => {
-    return state.routing.location.pathname !== '/';
+    const bareRoutes =['/', '/login', '/forgotPassword' , '/resetPassword']
+    return bareRoutes.indexOf(state.routing.location.pathname) === -1;
 }
