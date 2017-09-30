@@ -11,20 +11,25 @@ const initialState = {
 
 export default (state = initialState, action) => {
     switch(action.type){
-        case constants.AUTHENTICATE:
+        case constants.LOGON:
             return { ...state, isProcessing : true }
-        case constants.AUTHENTICATION_SUCCESS:
+        case constants.LOGON_SUCCESS:
             return {
                 ...state,
                 isProcessing : false,
                 isAuthenticated : true,
             }
-        case constants.AUTHENTICATION_FAILED:
+        case constants.LOGON_FAILED:
             return {
                 ...state,
                 isProcessing : false,
                 isAuthenticated : false,
-                errorMessage : constants.ERROR_MESSAGE_FAILED_AUTHENTICATION
+                errorMessage : constants.ERROR_MESSAGE_FAILED_LOGON
+            }
+        case constants.LOG_OUT:
+            return {
+                ...state,
+                isAuthenticated : false
             }
         case constants.SUBMIT_FORGOTTEN_PASSWORD_EMAIL:
             return { 

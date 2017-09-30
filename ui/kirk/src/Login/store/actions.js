@@ -1,11 +1,9 @@
 
 import * as constants from './constants';
 
-export const authenticate = (username, password) => {
-    console.log(username)
-    console.log(password)
+export const logon = (username, password) => {
     return dispatch => {
-        dispatch({ type : constants.AUTHENTICATE })
+        dispatch({ type : constants.LOGON })
         const url = `${process.env.REACT_APP_API_ROOT}/forces`;
 
         fetch(url)
@@ -13,12 +11,20 @@ export const authenticate = (username, password) => {
         .then(json => {
             const token = Math.random().toString(18).substr(2, 15);
             localStorage.setItem('auth', token)
-            dispatch({ type : constants.AUTHENTICATION_SUCCESS })
+            dispatch({ type : constants.LOGON_SUCCESS })
         })
         .catch(err => {
-            dispatch({ type : constants.AUTHENTICATION_FAILED })
+            dispatch({ type : constants.LOGON_FAILED })
         })
         
+    }
+}
+
+export const logout =() => {
+    console.log('logout action')
+    return dispatch => {
+        localStorage.removeItem('auth')
+        dispatch({type : constants.LOG_OUT})
     }
 }
 

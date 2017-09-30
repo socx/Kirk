@@ -1,5 +1,8 @@
 import React from 'react';
-import logo from '../../assets/img/logo-default.png';
+// import { bindActionCreators } from 'redux';
+// import { connect } from 'react-redux';
+// import { push } from 'react-router-redux';
+
 
 const Header3  = (props) => (
     <div className={`page-header ${props.hidden ? 'hidden' : ''}`}>
@@ -7,7 +10,7 @@ const Header3  = (props) => (
             <div className='container'>
                 <div className='page-logo'>
                     <a href='index.html'>
-                        <img src={logo} alt='logo' className='logo-default' />
+                        <img src={props.logo} alt='logo' className='logo-default' />
                     </a>
                 </div>
                 <a href='page_user_profile_1.html' className='menu-toggler'> </a>
@@ -65,7 +68,7 @@ const Header3  = (props) => (
                             </a>
                             <ul className='dropdown-menu pull-left'>
                                 <li aria-haspopup='true' className=' '>
-                                    <a className='nav-link  '>
+                                    <a className='nav-link  '  onClick={() => props.history.push('/dashboard')}>
                                         <i className='icon-bar-chart'></i> Default Dashboard
                                         <span className='badge badge-success'>1</span>
                                     </a>
@@ -73,17 +76,17 @@ const Header3  = (props) => (
                             </ul>
                         </li>
                         <li aria-haspopup='true' className='menu-dropdown classic-menu-dropdown '>
-                            <a> Contacts
+                            <a onClick={() => props.navigateTo('/contact')}> Contacts
                                 <span className='arrow'></span>
                             </a>
                         </li>
                         <li aria-haspopup='true' className='menu-dropdown classic-menu-dropdown '>
-                            <a> Finance
+                            <a onClick={() => props.history.push('/finance')}> Finance
                                 <span className='arrow'></span>
                             </a>
                         </li>
                         <li aria-haspopup='true' className='menu-dropdown classic-menu-dropdown '>
-                            <a> Misc
+                            <a onClick={() => props.history.push('/logout')}> Logout
                                 <span className='arrow'></span>
                             </a>
                         </li>
@@ -94,5 +97,20 @@ const Header3  = (props) => (
     </div>
 )
 
+export default Header3;
 
-export default Header3
+// const mapStateToProps  = state => ({
+//     errorMessage : state.login.errorMessage,
+//     message : state.login.message,
+//     isAuthenticating : state.login.isAuthenticating,
+//     isAuthenticated : state.login.isAuthenticated,
+//     router : state.router
+// })
+
+// const mapDispatchToProps = dispatch => bindActionCreators({
+//     goToForgotPassword: () => push('/forgotPassword'),
+//     loginClicked: () => push('/home')
+// }, dispatch)
+
+
+// export default connect(mapStateToProps, mapDispatchToProps)(Header3);

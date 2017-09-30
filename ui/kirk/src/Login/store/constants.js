@@ -1,6 +1,7 @@
-export const AUTHENTICATE = 'login/AUTHENTICATE'
-export const AUTHENTICATION_FAILED = 'login/AUTHENTICATION_FAILED'
-export const AUTHENTICATION_SUCCESS = 'login/AUTHENTICATION_SUCCESS'
+export const LOGON = 'login/LOGON'
+export const LOGON_FAILED = 'login/LOGON_FAILED'
+export const LOGON_SUCCESS = 'login/LOGON_SUCCESS'
+export const LOG_OUT = 'login/LOG_OUT'
 export const GET_TOKEN_USER_DETAILS = 'login/GET_TOKEN_USER_DETAILS'
 export const GET_TOKEN_USER_DETAILS_SUCCESS = 'login/GET_TOKEN_USER_DETAILS_SUCCESS'
 export const GET_TOKEN_USER_DETAILS_FAILED = 'login/GET_TOKEN_USER_DETAILS_FAILED'
@@ -8,7 +9,7 @@ export const SUBMIT_FORGOTTEN_PASSWORD_EMAIL = 'login/SUBMIT_FORGOTTEN_PASSWORD_
 export const SUBMIT_FORGOTTEN_PASSWORD_EMAIL_SUCCESS = 'login/SUBMIT_FORGOTTEN_PASSWORD_EMAIL_SUCCESS'
 export const SUBMIT_FORGOTTEN_PASSWORD_EMAIL_FAILED = 'login/SUBMIT_FORGOTTEN_PASSWORD_EMAIL_FAILED'
 
-export const ERROR_MESSAGE_FAILED_AUTHENTICATION = 'Invalid Username and/or Password'
+export const ERROR_MESSAGE_FAILED_LOGON = 'Invalid Username and/or Password'
 
 export const SUBMITTED_FORGOTTEN_PASSWORD_EMAIL_SUCCESS_MESSAGE = 'Email submitted successfully. Please check your email to know reset your password.'
 export const SUBMITTED_FORGOTTEN_PASSWORD_EMAIL_ERROR_MESSAGE = 'Error submitting email'

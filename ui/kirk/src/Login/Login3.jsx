@@ -5,17 +5,19 @@ import { push } from 'react-router-redux';
 
 import './login-3.css'
 import logo from '../assets/img/logo-default.png';
-import { authenticate } from './store/actions'
+import { logon } from './store/actions'
 
 
 class Login3 extends React.Component{
     componentDidMount(){
         const token = localStorage.getItem('auth')
-        token && this.props.history.push('/home')
+        token && this.props.history.push('/dashboard')
     }
+
     componentDidUpdate() {
-        this.props.isAuthenticated && this.props.history.push('/home')
+        this.props.isAuthenticated && this.props.history.push('/dashboard')
     }
+
     render () {
         return(
             <div className='login'>
@@ -53,7 +55,7 @@ class Login3 extends React.Component{
                                 <input type='checkbox' name='remember' value='1' /> Remember me
                                 <span></span>
                             </label>
-                            <button type='button' className='btn blue pull-right' onClick={() => this.props.authenticate(this.inputUsername.value, this.inputPassword.value)}> Login </button>
+                            <button type='button' className='btn blue pull-right' onClick={() => this.props.logon(this.inputUsername.value, this.inputPassword.value)}> Login </button>
                         </div>
                         <div className='login-options hidden'>
                             <h4>Or login with</h4>
@@ -99,7 +101,7 @@ const mapStateToProps  = state => ({
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-    authenticate,
+    logon,
     goToForgotPassword: () => push('/forgotPassword'),
     loginClicked: () => push('/home')
 }, dispatch)
